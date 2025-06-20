@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lytradev | Feedback</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #39f;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    #feedback-form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      background: #121212;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,123,255,0.1);
+    }
+
+    #feedback-form input,
+    #feedback-form textarea {
+      margin: 10px 0;
+      padding: 12px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background: #1a1a1a;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    #feedback-form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .star-rating {
+      display: flex;
+      font-size: 2rem;
+      color: #555;
+      margin: 10px 0;
+      justify-content: center;
+    }
+
+    .star {
+      cursor: pointer;
+      transition: transform 0.2s, color 0.2s;
+    }
+
+    .star:hover {
+      transform: scale(1.2);
+    }
+
+    .star.active {
+      color: #39f;
+      text-shadow: 0 0 10px #39f;
+    }
+
+    #feedback-form button {
+      padding: 12px;
+      background: #39f;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #feedback-form button:hover {
+      background: #007bff;
+      color: #fff;
+      box-shadow: 0 0 10px #39f;
+    }
+
+    #feedback-status {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #39f;
+      text-align: center;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      color: #39f;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover {
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <h2>Send Us Feedback</h2>
+  <form id="feedback-form">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <div class="star-rating">
+      <span class="star">★</span>
+      <span class="star">★</span>
+      <span class="star">★</span>
+      <span class="star">★</span>
+      <span class="star">★</span>
+    </div>
+    <input type="hidden" name="rating" id="rating" />
+    <button type="submit">Send Feedback</button>
+    <p id="feedback-status"></p>
+  </form>
+
+  <a href="index.html" class="back-link">← Go Back to Home</a>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("feedback-form");
+      const stars = document.querySelectorAll(".star");
+      const ratingInput = document.getElementById("rating");
+      const status = document.getElementById("feedback-status");
+
+      let rating = 0;
+
+      stars.forEach((star, index) => {
+        star.addEventListener("click", () => {
+          rating = index + 1;
+          ratingInput.value = rating;
+          updateStars(rating);
+        });
+
+        star.addEventListener("mouseover", () => updateStars(index + 1));
+        star.addEventListener("mouseout", () => updateStars(rating));
+      });
+
+      function updateStars(rate) {
+        stars.forEach((star, index) => {
+          star.classList.toggle("active", index < rate);
+        });
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (rating === 0) {
+          status.textContent = "Please select a rating.";
+          return;
+        }
+
+        // Simulate submission and show success message
+        status.textContent = "Your feedback has been submitted for approval. Thanks!";
+        form.reset();
+        updateStars(0);
+        rating = 0;
+      });
+    });
+  </script>
+</body>
+</html>
