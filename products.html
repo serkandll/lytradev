@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lytradev | Products</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      padding: 0 20px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      padding: 20px;
+      background: #111;
+      border-bottom: 1px solid #222;
+    }
+
+    .nav-btn {
+      color: #39f;
+      border: 2px solid transparent;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      border-color: #39f;
+      background-color: rgba(57, 153, 255, 0.1);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #39f;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .product {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #333;
+      margin-bottom: 30px;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .product:hover {
+      box-shadow: 0 0 25px #39f;
+      transform: translateY(-5px);
+    }
+
+    .product p {
+      margin: 6px 0;
+      color: #ccc;
+    }
+
+    .btn {
+      background-color: #222;
+      border: 2px solid #39f;
+      padding: 10px 20px;
+      color: #39f;
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: 15px;
+      display: inline-block;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #39f;
+      color: #000;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #39f;
+    }
+
+    .note {
+      background: #222;
+      padding: 20px;
+      border-left: 4px solid #39f;
+      border-radius: 8px;
+      margin-top: 40px;
+      color: #ccc;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .note:hover {
+      box-shadow: 0 0 20px #39f;
+      transform: scale(1.01);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #222;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-btn">Home</a>
+    <a href="services.html" class="nav-btn">Services</a>
+    <a href="products.html" class="nav-btn">Products</a>
+    <a href="contact.html" class="nav-btn">Contact</a>
+  </nav>
+
+  <section>
+    <h2>Our Products & Pricing</h2>
+
+    <div class="product">
+      <h3>PREFIX BOT</h3>
+      <p>Startup: <strong>300 Robux</strong></p>
+      <p>Extra Command: <strong>100 Robux</strong></p>
+      <p>Extra Command w/ DB: <strong>700 Robux</strong></p>
+      <a href="https://discord.gg/your-server" class="btn" target="_blank">Buy Prefix Bot</a>
+    </div>
+
+    <div class="product">
+      <h3>SLASH COMMANDS BOT</h3>
+      <p>Startup: <strong>400 Robux</strong></p>
+      <p>Extra Command: <strong>200 Robux</strong></p>
+      <p>Extra Command w/ DB: <strong>1000 Robux</strong></p>
+      <a href="https://discord.gg/your-server" class="btn" target="_blank">Buy Slash Bot</a>
+    </div>
+
+    <div class="product">
+      <h3>TICKET BOT</h3>
+      <p>Startup: <strong>1000 Robux</strong></p>
+      <p>Extra Command: <strong>100 Robux</strong></p>
+      <p>Extra Command w/ DB: <strong>300 Robux</strong></p>
+      <a href="https://discord.gg/your-server" class="btn" target="_blank">Buy Ticket Bot</a>
+    </div>
+
+    <div class="product">
+      <h3>FULL SUPPORT PACKAGE</h3>
+      <p><strong>2,500 Robux</strong></p>
+      <p>✓ Everything Included</p>
+      <p>✓ No Startup Fees</p>
+      <p>✓ Infinite Commands</p>
+      <p>✓ Lifetime Hosting</p>
+      <a href="https://discord.gg/your-server" class="btn" target="_blank">Buy Full Support</a>
+    </div>
+
+    <div class="note">
+      <h3>Additional Notes</h3>
+      <p>• All bots hosted 24/7</p>
+      <p>• 12 hours to request free command additions</p>
+      <p>• After that, bot moves to VDS</p>
+      <p>• <strong>No refunds</strong> once bot is delivered</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Lytradev. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

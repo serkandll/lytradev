@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lytradev | Software & Security</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+
+    /* NAVIGATION */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      padding: 20px;
+      background: #111;
+      border-bottom: 1px solid #222;
+    }
+
+    .nav-btn {
+      color: #39f;
+      border: 2px solid transparent;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      border-color: #39f;
+      background-color: rgba(57, 153, 255, 0.1);
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(90deg, #1f1f1f, #191919);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #39f;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    .btn {
+      background-color: #222;
+      border: 2px solid #39f;
+      padding: 12px 24px;
+      color: #39f;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 10px;
+      border-radius: 8px;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #39f;
+      color: #000;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #39f;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #39f;
+      margin-bottom: 20px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #333;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+    }
+
+    .card h3 {
+      color: #39f;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #222;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      .nav-btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-btn">Home</a>
+    <a href="services.html" class="nav-btn">Services</a>
+    <a href="products.html" class="nav-btn">Products</a>
+    <a href="contact.html" class="nav-btn">Contact</a>
+  </nav>
+
+  <header>
+    <h1>Lytradev</h1>
+    <p>Advanced Bots. Security Systems. Custom Websites & More.</p>
+    <div class="buttons">
+      <a href="services.html" class="btn">Explore Services</a>
+      <a href="contact.html" class="btn">Reach Out</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>Who We Are</h2>
+    <p>Lytradev is a software company specialized in automation, Discord bots, anti-raid systems, game tools, custom websites and cybersecurity. We create reliable, scalable and secure solutions for the modern web and gaming world.</p>
+  </section>
+
+  <section id="preview">
+    <h2>Featured Services</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Discord Bots</h3>
+        <p>Custom bots tailored for your community or server.</p>
+      </div>
+      <div class="card">
+        <h3>Anti-Raid Systems</h3>
+        <p>Powerful, real-time protection against spam and attacks.</p>
+      </div>
+      <div class="card">
+        <h3>Custom Websites</h3>
+        <p>Modern, fast and fully responsive websites for clients.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Lytradev. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
