@@ -21,7 +21,6 @@
       padding: 0 20px;
     }
 
-    /* NAVIGATION */
     .navbar {
       display: flex;
       justify-content: center;
@@ -59,21 +58,16 @@
     .glow-text {
       background: linear-gradient(90deg, #fff, #39f, #fff);
       background-size: 200% auto;
-      color: #fff;
+      color: transparent;
       background-clip: text;
       -webkit-background-clip: text;
-      color: transparent;
       animation: glowmove 3s linear infinite;
       text-shadow: 0 0 8px #39f, 0 0 16px #39f;
     }
 
     @keyframes glowmove {
-      0% {
-        background-position: 200% center;
-      }
-      100% {
-        background-position: -200% center;
-      }
+      0% { background-position: 200% center; }
+      100% { background-position: -200% center; }
     }
 
     header p {
@@ -142,6 +136,79 @@
       margin-bottom: 10px;
     }
 
+    #feedback {
+      margin-top: 60px;
+      padding: 20px;
+      background: #121212;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,123,255,0.1);
+    }
+
+    #feedback-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #feedback-form input,
+    #feedback-form textarea {
+      margin: 10px 0;
+      padding: 12px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background: #1a1a1a;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    #feedback-form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .star-rating {
+      display: flex;
+      font-size: 2rem;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    .star {
+      cursor: pointer;
+      transition: transform 0.2s, color 0.2s;
+    }
+
+    .star:hover {
+      transform: scale(1.2);
+    }
+
+    .star.active {
+      color: #39f;
+      text-shadow: 0 0 10px #39f;
+    }
+
+    #feedback-form button {
+      padding: 12px;
+      background: #39f;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #feedback-form button:hover {
+      background: #007bff;
+      color: #fff;
+      box-shadow: 0 0 10px #39f;
+    }
+
+    #feedback-status {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #39f;
+    }
+
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -163,7 +230,6 @@
 </head>
 <body>
 
-  <!-- NAVIGATION -->
   <nav class="navbar">
     <a href="index.html" class="nav-btn">Home</a>
     <a href="services.html" class="nav-btn">Services</a>
@@ -182,44 +248,89 @@
 
   <section id="about">
     <h2>Who We Are</h2>
-    <p>Lytradev is a software company specialized in automation, Discord bots, anti-raid systems, game tools, custom websites and cybersecurity. We create reliable, scalable and secure solutions for the modern web and gaming world.</p>
+    <p>Lytradev is a software company specialized in automation, Discord bots, anti-raid systems, game tools, custom websites and cybersecurity.</p>
   </section>
 
   <section id="preview">
     <h2>Featured Services</h2>
     <div class="card-grid">
-      <div class="card">
-        <h3>Discord Bots</h3>
-        <p>Custom bots tailored for your community or server.</p>
-      </div>
-      <div class="card">
-        <h3>Anti-Raid Systems</h3>
-        <p>Powerful, real-time protection against spam and attacks.</p>
-      </div>
-      <div class="card">
-        <h3>Custom Websites</h3>
-        <p>Modern, fast and fully responsive websites for clients.</p>
-      </div>
+      <div class="card"><h3>Discord Bots</h3><p>Custom bots tailored for your community or server.</p></div>
+      <div class="card"><h3>Anti-Raid Systems</h3><p>Powerful, real-time protection against spam and attacks.</p></div>
+      <div class="card"><h3>Custom Websites</h3><p>Modern, fast and fully responsive websites for clients.</p></div>
     </div>
+  </section>
+
+  <section id="feedback">
+    <h2>Send Us Feedback</h2>
+    <form id="feedback-form" method="POST" action="https://formsubmit.co/ofckayra@gmail.com">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <div class="star-rating">
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+      </div>
+      <input type="hidden" name="rating" id="rating" />
+      <input type="hidden" name="_captcha" value="false">
+      <button type="submit">Send Feedback</button>
+      <p id="feedback-status"></p>
+    </form>
   </section>
 
   <footer>
     <p>© 2025 Lytradev. All rights reserved.</p>
   </footer>
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/68554e7e9a20a11910532593/1iu6jl819';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+  <!-- Tawk.to -->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/68554e7e9a20a11910532593/1iu6jl819';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
+
+  <!-- Feedback JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("feedback-form");
+      const stars = document.querySelectorAll(".star");
+      const ratingInput = document.getElementById("rating");
+      const status = document.getElementById("feedback-status");
+
+      let rating = 0;
+
+      stars.forEach((star, index) => {
+        star.addEventListener("click", () => {
+          rating = index + 1;
+          ratingInput.value = rating;
+          updateStars(rating);
+        });
+
+        star.addEventListener("mouseover", () => updateStars(index + 1));
+        star.addEventListener("mouseout", () => updateStars(rating));
+      });
+
+      function updateStars(rate) {
+        stars.forEach((star, index) => {
+          star.classList.toggle("active", index < rate);
+        });
+      }
+
+      form.addEventListener("submit", function(e) {
+        if (rating === 0) {
+          e.preventDefault();
+          status.textContent = "Please select a rating.";
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
