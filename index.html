@@ -70,16 +70,6 @@
       100% { background-position: -200% center; }
     }
 
-    header p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      color: #ccc;
-    }
-
-    .buttons {
-      margin-top: 30px;
-    }
-
     .btn {
       background-color: #222;
       border: 2px solid #39f;
@@ -106,12 +96,6 @@
       padding: 20px;
     }
 
-    h2 {
-      font-size: 2rem;
-      color: #39f;
-      margin-bottom: 20px;
-    }
-
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -136,77 +120,73 @@
       margin-bottom: 10px;
     }
 
-    #feedback {
-      margin-top: 60px;
+    /* Feedback Carousel Styles */
+    #approved-feedback h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #39f;
+    }
+
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
       padding: 20px;
-      background: #121212;
+      scroll-behavior: smooth;
+    }
+
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .feedback-box {
+      flex: 0 0 auto;
+      width: 300px;
+      background: #1f1f1f;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,123,255,0.1);
-    }
-
-    #feedback-form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    #feedback-form input,
-    #feedback-form textarea {
-      margin: 10px 0;
-      padding: 12px;
+      padding: 20px;
       border: 1px solid #333;
-      border-radius: 8px;
-      background: #1a1a1a;
-      color: #fff;
-      font-size: 1rem;
+      scroll-snap-align: center;
+      box-shadow: 0 0 20px rgba(57, 153, 255, 0.2);
     }
 
-    #feedback-form textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    .star-rating {
-      display: flex;
-      font-size: 2rem;
-      color: #555;
-      margin: 10px 0;
-    }
-
-    .star {
-      cursor: pointer;
-      transition: transform 0.2s, color 0.2s;
-    }
-
-    .star:hover {
-      transform: scale(1.2);
-    }
-
-    .star.active {
+    .feedback-box h4 {
+      margin-bottom: 10px;
       color: #39f;
-      text-shadow: 0 0 10px #39f;
     }
 
-    #feedback-form button {
-      padding: 12px;
-      background: #39f;
-      color: #000;
-      font-weight: bold;
+    .stars {
+      color: #39f;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      text-shadow: 0 0 8px #39f;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.6);
       border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    #feedback-form button:hover {
-      background: #007bff;
-      color: #fff;
-      box-shadow: 0 0 10px #39f;
-    }
-
-    #feedback-status {
-      margin-top: 10px;
-      font-size: 0.9rem;
       color: #39f;
+      font-size: 2rem;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .arrow.left {
+      left: 0;
+    }
+
+    .arrow.right {
+      right: 0;
     }
 
     footer {
@@ -235,6 +215,7 @@
     <a href="services.html" class="nav-btn">Services</a>
     <a href="products.html" class="nav-btn">Products</a>
     <a href="contact.html" class="nav-btn">Contact</a>
+    <a href="feedback.html" class="nav-btn">Feedback</a>
   </nav>
 
   <header>
@@ -260,76 +241,46 @@
     </div>
   </section>
 
-  <section id="feedback">
-    <h2>Send Us Feedback</h2>
-    <form id="feedback-form" method="POST" action="https://formsubmit.co/ikayraofc@gmail.com">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <div class="star-rating">
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
+  <section id="approved-feedback">
+    <h2>What People Say</h2>
+    <div class="carousel-container">
+      <button class="arrow left" onclick="scrollCarousel(-1)">&#8249;</button>
+      <div class="carousel" id="feedback-carousel">
+        <div class="feedback-box">
+          <h4>Felix</h4>
+          <div class="stars">★★★★★</div>
+          <p>Serkan is a W guy. Bots are awesome!!</p>
+        </div>
+        <div class="feedback-box">
+          <h4>Daniel</h4>
+          <div class="stars">★★★★☆</div>
+          <p>it took 3 days for a bot but they are actually great</p>
+        </div>
+        <div class="feedback-box">
+          <h4>LARP SHR</h4>
+          <div class="stars">★★★★★</div>
+          <p>Professional, reliable and really helpful. The in game anti-raid systems are working perfect!</p>
+        </div>
+        <div class="feedback-box">
+          <h4>Dream</h4>
+          <div class="stars">★★★★★</div>
+          <p>Fast and perfect</p>
+        </div>
       </div>
-      <input type="hidden" name="rating" id="rating" />
-      <input type="hidden" name="_captcha" value="false">
-      <button type="submit">Send Feedback</button>
-      <p id="feedback-status"></p>
-    </form>
+      <button class="arrow right" onclick="scrollCarousel(1)">&#8250;</button>
+    </div>
   </section>
 
   <footer>
     <p>© 2025 Lytradev. All rights reserved.</p>
   </footer>
 
-  <!-- Tawk.to -->
-  <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/68554e7e9a20a11910532593/1iu6jl819';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-  </script>
-
-  <!-- Feedback JS -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("feedback-form");
-      const stars = document.querySelectorAll(".star");
-      const ratingInput = document.getElementById("rating");
-      const status = document.getElementById("feedback-status");
-
-      let rating = 0;
-
-      stars.forEach((star, index) => {
-        star.addEventListener("click", () => {
-          rating = index + 1;
-          ratingInput.value = rating;
-          updateStars(rating);
-        });
-
-        star.addEventListener("mouseover", () => updateStars(index + 1));
-        star.addEventListener("mouseout", () => updateStars(rating));
-      });
-
-      function updateStars(rate) {
-        stars.forEach((star, index) => {
-          star.classList.toggle("active", index < rate);
-        });
-      }
-
-      form.addEventListener("submit", function(e) {
-        if (rating === 0) {
-          e.preventDefault();
-          status.textContent = "Please select a rating.";
-        }
-      });
-    });
+    function scrollCarousel(direction) {
+      const carousel = document.getElementById("feedback-carousel");
+      const boxWidth = carousel.querySelector(".feedback-box").offsetWidth + 20;
+      carousel.scrollBy({ left: direction * boxWidth, behavior: 'smooth' });
+    }
   </script>
 
 </body>
