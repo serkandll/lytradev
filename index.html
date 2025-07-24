@@ -1,286 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="favicon.png" type="image/png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lytradev | Software & Security</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Lytradev | Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <style>
-    * {
-      box-sizing: border-box;
+    *, *::before, *::after {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       font-family: 'Roboto', sans-serif;
-      background: #0d0d0d;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
       color: #fff;
-      line-height: 1.6;
-      padding: 0 20px;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      padding: 20px;
-      background: #111;
-      border-bottom: 1px solid #222;
-    }
-
-    .nav-btn {
-      color: #39f;
-      border: 2px solid transparent;
-      padding: 10px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-    .nav-btn:hover {
-      border-color: #39f;
-      background-color: rgba(57, 153, 255, 0.1);
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px 40px;
-      background: linear-gradient(90deg, #1f1f1f, #191919);
-    }
-
-    header h1 {
-      font-size: 3rem;
-    }
-
-    .glow-text {
-      background: linear-gradient(90deg, #fff, #39f, #fff);
-      background-size: 200% auto;
-      color: transparent;
-      background-clip: text;
-      -webkit-background-clip: text;
-      animation: glowmove 3s linear infinite;
-      text-shadow: 0 0 8px #39f, 0 0 16px #39f;
-    }
-
-    @keyframes glowmove {
-      0% { background-position: 200% center; }
-      100% { background-position: -200% center; }
-    }
-
-    .btn {
-      background-color: #222;
-      border: 2px solid #39f;
-      padding: 12px 24px;
-      color: #39f;
-      font-weight: bold;
-      text-decoration: none;
-      margin: 10px;
-      border-radius: 8px;
-      display: inline-block;
-      transition: all 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #39f;
-      color: #000;
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #39f;
-    }
-
-    section {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #1a1a1a;
-      padding: 20px;
-      border-radius: 12px;
-      border: 1px solid #333;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
-    }
-
-    .card h3 {
-      color: #39f;
-      margin-bottom: 10px;
-    }
-
-    /* Feedback Carousel Styles */
-    #approved-feedback h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #39f;
-    }
-
-    .carousel-container {
+      overflow-x: hidden;
       position: relative;
-      overflow: hidden;
     }
 
-    .carousel {
+    .hero {
+      min-height: 100vh;
       display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 20px;
-      padding: 20px;
-      scroll-behavior: smooth;
-    }
-
-    .carousel::-webkit-scrollbar {
-      display: none;
-    }
-
-    .feedback-box {
-      flex: 0 0 auto;
-      width: 300px;
-      background: #1f1f1f;
-      border-radius: 12px;
-      padding: 20px;
-      border: 1px solid #333;
-      scroll-snap-align: center;
-      box-shadow: 0 0 20px rgba(57, 153, 255, 0.2);
-    }
-
-    .feedback-box h4 {
-      margin-bottom: 10px;
-      color: #39f;
-    }
-
-    .stars {
-      color: #39f;
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-      text-shadow: 0 0 8px #39f;
-    }
-
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.6);
-      border: none;
-      color: #39f;
-      font-size: 2rem;
-      padding: 10px;
-      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
       z-index: 2;
+      padding: 20px;
     }
 
-    .arrow.left {
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.5rem;
+      color: #39f;
+      text-shadow: 0 0 10px #39f;
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      color: #ccc;
+      max-width: 600px;
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    .countdown {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+      font-family: 'Orbitron', sans-serif;
+      animation: fadeIn 2s ease-out forwards;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .time-box {
+      background: #111;
+      padding: 20px 25px;
+      border: 2px solid #39f;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(57, 153, 255, 0.3);
+      min-width: 90px;
+    }
+
+    .time-box span {
+      display: block;
+      font-size: 2rem;
+      color: #39f;
+    }
+
+    .time-box label {
+      font-size: 0.75rem;
+      color: #999;
+    }
+
+    .glow-line {
+      height: 2px;
+      width: 80%;
+      background: linear-gradient(to right, transparent, #39f, transparent);
+      margin: 40px auto;
+      animation: pulse 2s infinite;
+    }
+
+    .background-stars {
+      position: absolute;
+      top: 0;
       left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(#39f 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.05;
+      animation: moveStars 60s linear infinite;
+      z-index: 0;
     }
 
-    .arrow.right {
-      right: 0;
+    .subscribe {
+      margin-top: 40px;
+      animation: fadeIn 2.5s ease-out forwards;
+    }
+
+    .subscribe input {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      background: #1a1a1a;
+      color: #fff;
+      margin-right: 10px;
+      width: 220px;
+    }
+
+    .subscribe button {
+      padding: 12px 20px;
+      background: #39f;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #000;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .subscribe button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #39f;
+    }
+
+    lottie-player {
+      margin-top: 40px;
+      width: 200px;
+      height: 200px;
     }
 
     footer {
       text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid #222;
+      padding: 30px 20px;
       font-size: 0.9rem;
-      color: #777;
+      color: #555;
+      border-top: 1px solid #222;
+      z-index: 2;
+      position: relative;
+    }
+
+    /* Toast bildirimi */
+    .toast {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #111;
+      color: #39f;
+      padding: 16px 24px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(57, 153, 255, 0.3);
+      font-weight: bold;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease, bottom 0.5s ease;
+      z-index: 999;
+    }
+
+    .toast.show {
+      opacity: 1;
+      pointer-events: auto;
+      bottom: 60px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes moveStars {
+      from { background-position: 0 0; }
+      to { background-position: 1000px 1000px; }
     }
 
     @media (max-width: 600px) {
-      header h1 {
+      .hero h1 {
         font-size: 2.2rem;
       }
-      .nav-btn {
-        padding: 8px 12px;
-        font-size: 0.9rem;
+
+      .subscribe input {
+        width: 160px;
+        margin-bottom: 10px;
+      }
+
+      .subscribe {
+        flex-direction: column;
+        align-items: center;
       }
     }
   </style>
 </head>
 <body>
 
-  <nav class="navbar">
-    <a href="index.html" class="nav-btn">Home</a>
-    <a href="services.html" class="nav-btn">Services</a>
-    <a href="products.html" class="nav-btn">Products</a>
-    <a href="contact.html" class="nav-btn">Contact</a>
-    <a href="feedback.html" class="nav-btn">Feedback</a>
-  </nav>
+  <div class="background-stars"></div>
 
-  <header>
-    <h1><span class="glow-text">Lytradev</span></h1>
-    <p>Advanced Bots. Security Systems. Custom Websites & More.</p>
-    <div class="buttons">
-      <a href="services.html" class="btn">Explore Services</a>
-      <a href="contact.html" class="btn">Reach Out</a>
+  <div class="hero">
+    <h1>Lytradev</h1>
+    <p>We're currently developing something amazing. Stay tuned for our launch!</p>
+
+    <div class="glow-line"></div>
+
+    <div class="countdown" id="countdown">
+      <div class="time-box"><span id="days">--</span><label>Days</label></div>
+      <div class="time-box"><span id="hours">--</span><label>Hours</label></div>
+      <div class="time-box"><span id="minutes">--</span><label>Minutes</label></div>
+      <div class="time-box"><span id="seconds">--</span><label>Seconds</label></div>
     </div>
-  </header>
 
-  <section id="about">
-    <h2>Who We Are</h2>
-    <p>Lytradev is a software company specialized in automation, Discord bots, anti-raid systems, game tools, custom websites and cybersecurity.</p>
-  </section>
-
-  <section id="preview">
-    <h2>Featured Services</h2>
-    <div class="card-grid">
-      <div class="card"><h3>Discord Bots</h3><p>Custom bots tailored for your community or server.</p></div>
-      <div class="card"><h3>Anti-Raid Systems</h3><p>Powerful, real-time protection against spam and attacks.</p></div>
-      <div class="card"><h3>Custom Websites</h3><p>Modern, fast and fully responsive websites for clients.</p></div>
+    <div class="subscribe">
+      <form id="subscribe-form">
+        <input type="email" placeholder="Enter your email..." required>
+        <button type="submit">Notify Me</button>
+      </form>
     </div>
-  </section>
 
-  <section id="approved-feedback">
-    <h2>What People Say</h2>
-    <div class="carousel-container">
-      <button class="arrow left" onclick="scrollCarousel(-1)">&#8249;</button>
-      <div class="carousel" id="feedback-carousel">
-        <div class="feedback-box">
-          <h4>Felix</h4>
-          <div class="stars">★★★★★</div>
-          <p>Serkan is a W guy. Bots are awesome!!</p>
-        </div>
-        <div class="feedback-box">
-          <h4>Daniel</h4>
-          <div class="stars">★★★★☆</div>
-          <p>it took 3 days for a bot but they are actually great</p>
-        </div>
-        <div class="feedback-box">
-          <h4>LARP SHR</h4>
-          <div class="stars">★★★★★</div>
-          <p>Professional, reliable and really helpful. The in game anti-raid systems are working perfect!</p>
-        </div>
-        <div class="feedback-box">
-          <h4>Dream</h4>
-          <div class="stars">★★★★★</div>
-          <p>Fast and perfect</p>
-        </div>
-      </div>
-      <button class="arrow right" onclick="scrollCarousel(1)">&#8250;</button>
-    </div>
-  </section>
+    <div id="toast" class="toast">✅ You will be notified!</div>
+
+    <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_puciaact.json" background="transparent" speed="1" loop autoplay></lottie-player>
+  </div>
 
   <footer>
-    <p>© 2025 Lytradev. All rights reserved.</p>
+    © 2025 Lytradev. All rights reserved.
   </footer>
 
   <script>
-    function scrollCarousel(direction) {
-      const carousel = document.getElementById("feedback-carousel");
-      const boxWidth = carousel.querySelector(".feedback-box").offsetWidth + 20;
-      carousel.scrollBy({ left: direction * boxWidth, behavior: 'smooth' });
-    }
+    const now = new Date();
+    const launchDate = new Date(now.getTime() + 10 * 24 * 60 * 60 * 1000).getTime();
+
+    const countdown = () => {
+      const current = new Date().getTime();
+      const distance = launchDate - current;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+
+      if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "<p style='color: #39f;'>We are live now!</p>";
+      }
+    };
+
+    setInterval(countdown, 1000);
+
+    // Toast Bildirimi
+    const form = document.getElementById("subscribe-form");
+    const toast = document.getElementById("toast");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 4000);
+      form.reset();
+    });
   </script>
 
 </body>
