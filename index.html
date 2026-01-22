@@ -1668,8 +1668,47 @@
       updateProfit();
     });
   </script>
+  <script>
+const discordUserId = "691650722751709276";
+const discordDMLink = `discord:///users/${discordUserId}`;
+
+function updateButtonsToDiscord() {
+  const buttons = [
+    '[data-wf-element-id="612ddc5d-6fb9-138a-2ce1-77dbada3d81e"]',
+    '[data-wf-element-id="6f244790-4ba3-360c-6ed5-bcdb081af4f6"]',
+    '[data-wf-element-id="1c477564-f4b8-224a-047d-42add912b5b7"]',
+    '[data-wf-element-id="844c2a98-d941-1aba-c754-bb2df579e627"]',
+    '[data-wf-element-id="c96c1b3d-b8f0-842e-4de5-664436c7503b"]',
+    '[data-wf-element-id="f4404438-8689-6665-6a62-8327212b3490"]',
+    '[data-wf-element-id="53a1b202-eda3-5702-2fa0-8bdeafd1f3b0"]',
+    '[data-wf-element-id="edc02ac4-7eb7-7e0c-f042-7d90bd87c18b"]',
+    '.button-primary.products._100',
+    '.button-primary.products.nav.desktop-hide',
+    '.button-primary.products.nav.mobile-hide'
+  ];
+
+  buttons.forEach(selector => {
+    const buttonElements = document.querySelectorAll(selector);
+    buttonElements.forEach(button => {
+      if (button && button.tagName === 'A') {
+        button.href = discordDMLink;
+        button.target = "_blank";
+        button.addEventListener('click', function(e) {
+          setTimeout(function() {
+            window.location.href = `https://discord.com/users/${discordUserId}`;
+          }, 250);
+        });
+      }
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', updateButtonsToDiscord);
+setTimeout(updateButtonsToDiscord, 1000);
+</script>
 </body>
 </html>
+
 
 
 
